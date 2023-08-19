@@ -24,3 +24,9 @@ jobs:
           context: .
           push: true
           tags: nvrbckdown/todo-list-app:latest
+      - uses: actions-hub/kubectl@master
+        env:
+          KUBE_CONFIG: ${{ secrets.KUBE_CONFIG }}
+      - uses: actions-hub/kubectl@master
+        with:
+          args: apply -f ./manifests/

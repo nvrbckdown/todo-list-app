@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: todo-list-app
+  name: todo-list-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: todo-list-app
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: todo-list-app
+    spec:
+      containers:
+      - image: nvrbckdown/todo-list-app:latest
+        name: todo-list-app
+        
