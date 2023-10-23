@@ -5,6 +5,9 @@ on:
     branches:
       - 'master'
 
+env:
+  TAG: ${{ github.run_id }}
+
 jobs:
   docker:
     runs-on: ubuntu-latest
@@ -23,7 +26,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: nvrbckdown/todo-list-app:${{ github.run_number }}
+          tags: nvrbckdown/todo-list-app:$TAG
       # - uses: actions-hub/kubectl@master
       #   env:
       #     KUBE_CONFIG: ${{ secrets.KUBE_CONFIG }}
