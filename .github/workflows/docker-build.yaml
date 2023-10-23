@@ -6,7 +6,7 @@ on:
       - 'master'
 
 env:
-  TAG: ${{ github.run_id }}
+  TAG: ${{ github_run_id }}
 
 jobs:
   docker:
@@ -26,7 +26,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: nvrbckdown/todo-list-app:$TAG
+          tags: nvrbckdown/todo-list-app:$TAG 
       # - uses: actions-hub/kubectl@master
       #   env:
       #     KUBE_CONFIG: ${{ secrets.KUBE_CONFIG }}
